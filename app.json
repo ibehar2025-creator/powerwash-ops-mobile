@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "PowerWash Ops",
+    "slug": "powerwash-ops-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "powerwashops",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "assetBundlePatterns": ["**/*"],
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0f3d4a"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.powerwashingpros.ops"
+    },
+    "android": {
+      "package": "com.powerwashingpros.ops",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0f3d4a"
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "replace-after-eas-init"
+      }
+    }
+  }
+}
