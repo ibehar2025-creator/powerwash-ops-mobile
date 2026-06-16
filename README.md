@@ -2,6 +2,10 @@
 
 Native Expo app for The Powerwashing Pros operations dashboard.
 
+Download page:
+
+https://ibehar2025-creator.github.io/powerwash-ops-mobile/
+
 ## Local preview
 
 ```bash
