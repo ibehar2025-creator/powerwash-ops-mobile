@@ -44,11 +44,6 @@ jobs:
       - name: Generate Android project
         run: npx expo prebuild --platform android --non-interactive
 
-      - name: Pin Gradle for Expo SDK 52
-        run: |
-          sed -i 's/gradle-[0-9.]*-all.zip/gradle-8.8-all.zip/' android/gradle/wrapper/gradle-wrapper.properties
-          cat android/gradle/wrapper/gradle-wrapper.properties
-
       - name: Build installable debug APK
         run: cd android && ./gradlew assembleDebug
 
