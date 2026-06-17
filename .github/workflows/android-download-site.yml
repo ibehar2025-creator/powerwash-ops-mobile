@@ -45,7 +45,23 @@ jobs:
         run: npx expo prebuild --platform android --non-interactive
 
       - name: Build standalone release APK
-        run: cd android && ./gradlew assembleRelease
+        run: |
+          keytool -genkeypair -v \
+            -storetype JKS \
+            -keystore "$HOME/.android/debug.keystore" \
+            -storepass android \
+            -alias androiddebugkey \
+            -keypass android \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000 \
+            -dname "CN=Android Debug,O=Android,C=US"
+          cd android
+          ./gradlew assembleRelease \
+            -Pandroid.injected.signing.store.file="$HOME/.android/debug.keystore" \
+            -Pandroid.injected.signing.store.password=android \
+            -Pandroid.injected.signing.key.alias=androiddebugkey \
+            -Pandroid.injected.signing.key.password=android
 
       - name: Prepare download site
         run: |
