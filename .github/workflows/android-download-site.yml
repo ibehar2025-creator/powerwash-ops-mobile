@@ -46,6 +46,7 @@ jobs:
 
       - name: Build standalone release APK
         run: |
+          mkdir -p "$HOME/.android"
           keytool -genkeypair -v \
             -storetype JKS \
             -keystore "$HOME/.android/debug.keystore" \
